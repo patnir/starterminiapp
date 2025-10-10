@@ -1,6 +1,6 @@
-# Starter Mini App
+# Base Mini App Starter
 
-A simple, ready-to-use starter template for building Farcaster Mini Apps with Next.js.
+A simple, ready-to-use starter template for building Base Mini Apps with Next.js. Base Mini Apps run in the Farcaster ecosystem and are discoverable in the Base app.
 
 Assets generated using [mini app asset generator](https://www.miniappassets.com/)
 
@@ -8,8 +8,10 @@ Assets generated using [mini app asset generator](https://www.miniappassets.com/
 
 ✅ Next.js 15 with App Router  
 ✅ TypeScript & Tailwind CSS  
-✅ Pre-configured Farcaster manifest (`/.well-known/farcaster.json`)  
+✅ Pre-configured manifest (`/.well-known/farcaster.json`) for Base Build  
+✅ Embed metadata for rich sharing in feeds  
 ✅ Starter assets (icon, splash, hero images)  
+✅ Eruda mobile debugging console (optional)  
 ✅ Ready to deploy on Vercel
 
 ## Quick Start
@@ -31,6 +33,13 @@ npm install
 - Change `primaryCategory` and `tags` to fit your use case
 - Update `splashBackgroundColor` if desired
 - Keep the asset URLs pointing to `/icon.png`, `/splash.png`, `/hero.png` (or update if you change asset names)
+
+**Update embed metadata** in `app/layout.tsx`:
+
+- Replace `starterminiapp.com` with your domain in the `fc:miniapp` metadata
+- Update the `name`, `title`, and `description` fields
+- Ensure image URLs point to your assets
+- The embed controls how your app appears when shared in Base and Farcaster feeds
 
 **Replace the assets** in `/public`:
 - `icon.png` - 1024×1024px PNG (app icon)
@@ -60,6 +69,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+**Optional: Enable Eruda debugging console**
+
+Eruda provides a mobile-friendly dev console for debugging your mini app inside Farcaster/Warpcast:
+
+```bash
+# Enable Eruda (useful for testing in mobile environments)
+NEXT_PUBLIC_LOAD_ERUDA=true npm run dev
+```
+
+Or add to `.env.local`:
+```
+NEXT_PUBLIC_LOAD_ERUDA=true
+```
+
+⚠️ **Important**: Don't enable this in production! Only use for development/testing.
+
 ### 5. Deploy
 
 Deploy to Vercel (or your preferred hosting):
@@ -75,15 +100,12 @@ npm run build
 After deploying:
 
 1. Ensure your manifest is accessible at `https://your-domain.com/.well-known/farcaster.json`
-2. Use [Warpcast's Mini App Manifest Tool](https://warpcast.com/~/developers/mini-apps) to verify domain ownership
-3. Sign the manifest with your wallet to generate `accountAssociation` fields
-4. Copy the generated values back into your `farcaster.json` file
-5. Redeploy your app
+2. Use the [Base Build Account Association tool](https://www.base.dev/preview?tab=account)
+3. Enter your domain and sign with your wallet to generate `accountAssociation` fields
+4. Copy the generated values back into your `farcaster.json` file and redeploy
+5. Your `baseBuilder.allowedAddresses` should contain the wallet address you used for signing
 
-For Base Build:
-1. Use the [Base Build Account Association tool](https://www.base.dev/preview?tab=account)
-2. Enter your domain and verify
-3. Update the `baseBuilder.allowedAddresses` field in your manifest
+**Note**: You can also use [Warpcast's Mini App Manifest Tool](https://warpcast.com/~/developers/mini-apps) for verification if needed.
 
 ## Project Structure
 
@@ -100,12 +122,50 @@ simple-miniapp/
 └── README.md
 ```
 
+## Manifest vs Embeds
+
+Your mini app uses **two** types of metadata:
+
+### 1. Manifest (`public/.well-known/farcaster.json`)
+- **Purpose**: Defines your app's overall identity, capabilities, and configuration
+- **Scope**: Domain-level (applies to your entire app)
+- **Used for**: App discovery, search indexing, app store listings, verification
+
+### 2. Embed Metadata (`app/layout.tsx`)
+- **Purpose**: Controls how individual pages appear when shared in Base and Farcaster feeds
+- **Scope**: Page-level (can be different per page/route)
+- **Used for**: Rich embed cards in feeds, share previews, launch buttons
+
+Both are required for a complete Base Mini App experience! The manifest establishes your identity, while embeds make your content shareable.
+
+For more details, see the [Farcaster Manifest vs Embed Guide](https://miniapps.farcaster.xyz/docs/guides/manifest-vs-embed).
+
+## Debugging in Mobile
+
+This starter includes [Eruda](https://github.com/liriliri/eruda), a mobile-friendly dev console that's invaluable for debugging mini apps inside the Base app and Warpcast where you don't have access to browser dev tools.
+
+To enable it, set the environment variable:
+```bash
+NEXT_PUBLIC_LOAD_ERUDA=true
+```
+
+When enabled, you'll see a floating debug button in your mini app that gives you access to:
+- Console logs
+- Network requests
+- DOM inspector
+- Local storage viewer
+- And more
+
+**Remember to disable it in production!** The provider automatically skips loading if the env var isn't set to `true`.
+
 ## Resources
 
+- [Base Mini Apps Documentation](https://docs.base.org/mini-apps)
+- [Base Build Tools](https://www.base.dev/preview)
 - [Farcaster Mini Apps Documentation](https://miniapps.farcaster.xyz/docs)
-- [Base Build Documentation](https://docs.base.org/mini-apps)
 - [Mini App Asset Generator](https://www.miniappassets.com/)
 - [Warpcast Developer Tools](https://warpcast.com/~/developers)
+- [Eruda Documentation](https://github.com/liriliri/eruda)
 
 ## License
 

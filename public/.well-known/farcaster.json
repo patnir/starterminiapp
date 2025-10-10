@@ -9,18 +9,18 @@
   },
   "miniapp": {
     "version": "1",
-    "name": "Starter Mini App",
+    "name": "Base Mini App Starter",
     "homeUrl": "https://starterminiapp.com",
     "iconUrl": "https://starterminiapp.com/icon.png",
     "splashImageUrl": "https://starterminiapp.com/splash.png",
     "splashBackgroundColor": "#000000",
     "heroImageUrl": "https://starterminiapp.com/hero.png",
-    "subtitle": "A starter template for mini apps",
-    "description": "Clone this starter template to build your own mini app. Customize this description to explain what your app does (max 170 chars).",
+    "subtitle": "Build your Base Mini App",
+    "description": "Clone this starter template to build your own Base Mini App. Customize this description to explain what your app does (max 170 chars).",
     "primaryCategory": "developer-tools",
     "tags": ["starter", "template", "miniapp"],
-    "ogTitle": "Starter Mini App",
-    "ogDescription": "Clone and customize this template to build your mini app",
+    "ogTitle": "Base Mini App Starter",
+    "ogDescription": "Clone and customize this template to build your Base Mini App",
     "ogImageUrl": "https://starterminiapp.com/hero.png"
   }
 }

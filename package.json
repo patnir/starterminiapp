@@ -2,7 +2,7 @@
   "name": "starterminiapp",
   "version": "0.1.0",
   "private": true,
-  "description": "A simple starter template for building Farcaster Mini Apps with Next.js",
+  "description": "A simple starter template for building Base Mini Apps with Next.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/patnir/starterminiapp.git"
