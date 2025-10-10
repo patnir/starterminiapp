@@ -34,19 +34,26 @@ npm install
 - Update `splashBackgroundColor` if desired
 - Keep the asset URLs pointing to `/icon.png`, `/splash.png`, `/hero.png` (or update if you change asset names)
 
-**Update embed metadata** in `app/layout.tsx`:
+**Update social preview metadata** in `app/layout.tsx`:
 
-- Replace `starterminiapp.com` with your domain in the `fc:miniapp` metadata
-- Update the `name`, `title`, and `description` fields
-- Ensure image URLs point to your assets
-- The embed controls how your app appears when shared in Base and Farcaster feeds
+- Replace `starterminiapp.com` with your domain in:
+  - `metadataBase` 
+  - `openGraph.url`
+  - `fc:miniapp` fields
+- Update `title` and `description` throughout
+- Ensure image URLs point to your assets (hero.png for social previews)
+- Update `openGraph` fields for Facebook/LinkedIn previews
+- Update `twitter` card fields for Twitter previews
+- Update `fc:miniapp` for Base/Farcaster feed embeds
 
 **Replace the assets** in `/public`:
-- `icon.png` - 1024×1024px PNG (app icon)
+- `icon.png` - 1024×1024px PNG (app icon, used for favicon and app icon)
 - `splash.png` - 200×200px (loading screen)
-- `hero.png` - 1200×630px (promotional image)
+- `hero.png` - 1200×630px (promotional image for social previews and embeds)
 
 Tip: Use [miniappassets.com](https://www.miniappassets.com/) to generate properly sized assets
+
+**Optional**: Customize the dynamic OG image in `app/opengraph-image.tsx` for programmatically generated social previews
 
 ### 3. Update package.json
 

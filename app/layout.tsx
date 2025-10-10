@@ -18,6 +18,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Base Mini App Starter",
   description: "A simple starter template for building Base Mini Apps",
+  metadataBase: new URL('https://starterminiapp.com'),
+  openGraph: {
+    title: "Base Mini App Starter",
+    description: "Clone and customize this template to build your Base Mini App",
+    url: "https://starterminiapp.com",
+    siteName: "Base Mini App Starter",
+    images: [
+      {
+        url: "/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Base Mini App Starter"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Base Mini App Starter",
+    description: "Clone and customize this template to build your Base Mini App",
+    images: ["/hero.png"]
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png"
+  },
   other: {
     "fc:miniapp": JSON.stringify({
       version: "1",
