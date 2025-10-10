@@ -44,7 +44,16 @@ export default function Home() {
               <li className="flex items-start gap-3">
                 <span className="text-indigo-600 font-bold mt-0.5">2.</span>
                 <span>
-                  Replace assets in <code className="bg-white px-2 py-1 rounded text-sm font-mono">/public</code> (icon.png, splash.png, hero.png)
+                  Replace assets in <code className="bg-white px-2 py-1 rounded text-sm font-mono">/public</code> (icon.png, splash.png, hero.png) — Use{" "}
+                  <a
+                    href="https://www.miniappassets.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-600 hover:text-indigo-700 underline font-medium"
+                  >
+                    Mini App Asset Generator
+                  </a>{" "}
+                  to create them
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -67,6 +76,14 @@ export default function Home() {
               Helpful Resources
             </h2>
             <div className="space-y-2">
+              <a
+                href="https://www.miniappassets.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-purple-600 hover:text-purple-700 hover:underline font-medium"
+              >
+                🎨 Mini App Asset Generator →
+              </a>
               <a
                 href="https://docs.base.org/mini-apps"
                 target="_blank"
