@@ -22,6 +22,16 @@ export function MiniAppProvider({ children }: { children: ReactNode }) {
         const status = await sdk.isInMiniApp();
         setIsInMiniApp(status);
 
+        const context = await sdk.context;
+        if (!context.client.added) {
+          try {
+            await sdk.actions.addMiniApp();
+          } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error('Error prompting to add mini app:', error);
+          }
+        }
+
         if (status) {
           const miniAppContext = await sdk.context;
           setContext(miniAppContext);
