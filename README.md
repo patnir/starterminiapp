@@ -140,6 +140,45 @@ Both are required for a complete Base Mini App experience! The manifest establis
 
 For more details, see the [Farcaster Manifest vs Embed Guide](https://miniapps.farcaster.xyz/docs/guides/manifest-vs-embed).
 
+## Using the MiniApp Context
+
+This starter includes a `MiniAppProvider` that lets any component access mini app context data. Use the `useMiniApp()` hook in any component:
+
+```tsx
+'use client';
+
+import { useMiniApp } from './providers/miniAppProvider';
+
+export default function MyComponent() {
+  const { isInMiniApp, context, isLoading } = useMiniApp();
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (isInMiniApp && context) {
+    // Access user data
+    const { user, location, client } = context;
+    
+    return (
+      <div>
+        <p>Hello, @{user.username}!</p>
+        <p>FID: {user.fid}</p>
+        {user.pfpUrl && <img src={user.pfpUrl} alt="Profile" />}
+      </div>
+    );
+  }
+
+  return <div>Not in mini app context</div>;
+}
+```
+
+**Available context data:**
+- `isInMiniApp`: Boolean indicating if running as a mini app
+- `context.user`: User profile (fid, username, displayName, pfpUrl, bio, location)
+- `context.location`: Launch context (cast_embed, notification, launcher, etc.)
+- `context.client`: Platform info (platformType, clientFid, added, safeAreaInsets)
+- `context.features`: Available features (haptics, cameraAndMicrophoneAccess)
+- `isLoading`: Whether the context is still being fetched
+
 ## Debugging in Mobile
 
 This starter includes [Eruda](https://github.com/liriliri/eruda), a mobile-friendly dev console that's invaluable for debugging mini apps inside the Base app and Warpcast where you don't have access to browser dev tools.
@@ -166,6 +205,10 @@ When enabled, you'll see a floating debug button in your mini app that gives you
 - [Mini App Asset Generator](https://www.miniappassets.com/)
 - [Warpcast Developer Tools](https://warpcast.com/~/developers)
 - [Eruda Documentation](https://github.com/liriliri/eruda)
+
+## Author
+
+Created by [@patnir](https://github.com/patnir)
 
 ## License
 

@@ -1,4 +1,17 @@
+'use client';
+
+import { useEffect } from 'react';
+import { sdk } from '@farcaster/miniapp-sdk';
+import { useMiniApp } from './providers/miniAppProvider';
+
 export default function Home() {
+  const { isInMiniApp, context } = useMiniApp();
+
+  useEffect(() => {
+    // Signal that the app is ready to be displayed
+    sdk.actions.ready();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-lg p-8 sm:p-12">
@@ -9,6 +22,11 @@ export default function Home() {
           <p className="text-lg text-gray-600">
             Your Base Mini App is ready to customize
           </p>
+          {isInMiniApp && context?.user && (
+            <p className="text-sm text-gray-500 mt-2">
+              Welcome, @{context.user.username}!
+            </p>
+          )}
         </div>
 
         <div className="space-y-6 mb-8">
@@ -87,7 +105,15 @@ export default function Home() {
 
         <div className="text-center pt-6 border-t border-gray-200">
           <p className="text-sm text-gray-500">
-            Built with Next.js 15 • Ready to deploy on Vercel
+            Created by{" "}
+            <a
+              href="https://github.com/patnir"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 hover:text-indigo-700 font-medium hover:underline"
+            >
+              @patnir
+            </a>
           </p>
         </div>
       </div>

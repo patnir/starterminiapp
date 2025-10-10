@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "A simple starter template for building Base Mini Apps with Next.js",
+  "author": "patnir (https://github.com/patnir)",
   "repository": {
     "type": "git",
     "url": "https://github.com/patnir/starterminiapp.git"
@@ -17,16 +18,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@farcaster/miniapp-sdk": "^0.2.0",
+    "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
