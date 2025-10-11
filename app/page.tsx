@@ -2,7 +2,7 @@
 
 import { sdk } from '@farcaster/miniapp-sdk';
 import { useEffect } from 'react';
-import ConnectWallet from './components/ConnectWallet';
+import { WalletIndicator } from "./components/WalletIndicator";
 import { useMiniApp } from './providers/miniAppProvider';
 
 export default function Home() {
@@ -20,19 +20,11 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">
             Base Mini App Starter
           </h1>
-          <p className="text-lg text-gray-600">
-            Your Base Mini App is ready to customize
-          </p>
           {isInMiniApp && context?.user && (
             <p className="text-sm text-gray-500 mt-2">
               Welcome, @{context.user.username}!
             </p>
           )}
-        </div>
-
-        {/* Add ConnectWallet here */}
-        <div className="mb-8">
-          <ConnectWallet />
         </div>
 
         <div className="space-y-6 mb-8">
@@ -140,6 +132,7 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <WalletIndicator />
     </div>
   );
 }

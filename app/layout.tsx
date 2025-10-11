@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WalletIndicator } from "./components/WalletIndicator";
 import "./globals.css";
 import { Providers } from "./providers";
 import { ErudaProvider } from "./providers/erudaProvider";
@@ -76,6 +77,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
+          <WalletIndicator />
           {children}
         </Providers>
       </body>

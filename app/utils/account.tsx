@@ -28,7 +28,7 @@ export function Account() {
           )}
         </div>
 
-        <div className="flex flex-row gap-2 w-full">
+        <div className="flex flex-col sm:flex-row gap-2 w-full">
           <button
             onClick={copyAddress}
             className="w-full px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-lg transition-colors duration-200 border-2 border-gray-300 hover:border-gray-400"
