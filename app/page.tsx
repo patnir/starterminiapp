@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
 import { sdk } from '@farcaster/miniapp-sdk';
+import { useEffect } from 'react';
+import ConnectWallet from './components/ConnectWallet';
 import { useMiniApp } from './providers/miniAppProvider';
 
 export default function Home() {
@@ -27,6 +28,11 @@ export default function Home() {
               Welcome, @{context.user.username}!
             </p>
           )}
+        </div>
+
+        {/* Add ConnectWallet here */}
+        <div className="mb-8">
+          <ConnectWallet />
         </div>
 
         <div className="space-y-6 mb-8">

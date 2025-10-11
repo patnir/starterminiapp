@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 import { ErudaProvider } from "./providers/erudaProvider";
-import { MiniAppProvider } from "./providers/miniAppProvider";
-import { MiniAppIndicator } from "./providers/miniAppIndicator";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,10 +75,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MiniAppProvider>
-          <MiniAppIndicator />
+        <Providers>
           {children}
-        </MiniAppProvider>
+        </Providers>
       </body>
     </html>
   );
