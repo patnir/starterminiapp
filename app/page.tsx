@@ -17,7 +17,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-lg p-8 sm:p-12">
         <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-3">
+          <h1 className="text-2xl font-bold text-gray-900 mb-3">
             Base Mini App Starter
           </h1>
           {isInMiniApp && context?.user && (
@@ -56,12 +56,6 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-indigo-600 font-bold mt-0.5">3.</span>
-                <span>
-                  Customize this page in <code className="bg-white px-2 py-1 rounded text-sm font-mono">app/page.tsx</code>
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-indigo-600 font-bold mt-0.5">4.</span>
                 <span>
                   Deploy and verify domain ownership with Base Build account association tool
                 </span>
