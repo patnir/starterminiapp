@@ -11,12 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Base Mini App Starter",
-  description: "A simple starter template for building Base Mini Apps",
+  title: "Base Mini App Starter - npx starterminiapp",
+  description: "Bootstrap your Base Mini App in seconds with npx starterminiapp. Zero-config CLI for Farcaster Mini Apps with Next.js, TypeScript, Wagmi, and Base integration.",
   metadataBase: new URL('https://starterminiapp.com'),
+  keywords: ["base", "farcaster", "mini app", "nextjs", "starter", "template", "cli", "npm", "npx", "starterminiapp"],
   openGraph: {
-    title: "Base Mini App Starter",
-    description: "Clone and customize this template to build your Base Mini App",
+    title: "Base Mini App Starter - npx starterminiapp",
+    description: "Bootstrap your Base Mini App in one command: npx starterminiapp my-app. Ready-to-deploy template for Farcaster with Base integration.",
     url: "https://starterminiapp.com",
     siteName: "Base Mini App Starter",
     images: [
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
         url: "/hero.png",
         width: 1200,
         height: 630,
-        alt: "Base Mini App Starter"
+        alt: "Base Mini App Starter - npx starterminiapp"
       }
     ],
     locale: "en_US",
@@ -32,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Base Mini App Starter",
-    description: "Clone and customize this template to build your Base Mini App",
+    title: "Base Mini App Starter - npx starterminiapp",
+    description: "Bootstrap your Base Mini App in one command: npx starterminiapp my-app",
     images: ["/hero.png"]
   },
   icons: {
