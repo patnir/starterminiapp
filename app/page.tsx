@@ -17,12 +17,9 @@ export default function Home() {
 
         {/* HERO SECTION - CLI First */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
             Base Mini App Starter
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 mb-6">
-            Bootstrap your Base Mini App in one command
-          </p>
 
           {/* CLI Command - Large and Centered */}
           <div className="bg-gray-900 rounded-xl p-5 sm:p-6 mb-4 shadow-xl">
@@ -137,7 +134,7 @@ export default function Home() {
                 📚 Base Mini Apps Documentation →
               </a>
               <a
-                href="https://www.base.dev/preview"
+                href="https://www.base.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-purple-600 hover:text-purple-700 hover:underline font-medium"
@@ -151,14 +148,6 @@ export default function Home() {
                 className="block text-purple-600 hover:text-purple-700 hover:underline font-medium"
               >
                 📖 Farcaster Mini Apps Docs →
-              </a>
-              <a
-                href="https://github.com/patnir/starterminiapp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-purple-600 hover:text-purple-700 hover:underline font-medium"
-              >
-                💻 GitHub Repository →
               </a>
             </div>
           </div>
