@@ -4,17 +4,41 @@ A simple, ready-to-use starter template for building Base Mini Apps with Next.js
 
 Assets generated using [mini app asset generator](https://www.miniappassets.com/)
 
+## ⚡ Quickest Start (Using CLI)
+
+Bootstrap a new Base Mini App in seconds:
+
+```bash
+npx starterminiapp my-app
+cd my-app
+npm run dev
+```
+
+That's it! The CLI will:
+- Clone this template
+- Remove git history and initialize a fresh repo
+- Rename the package to your app name
+- Install all dependencies
+- Set you up with a clean slate
+
+📦 [View on npm](https://www.npmjs.com/package/starterminiapp) | 🔧 [CLI Source](https://github.com/patnir/starterminiapp-cli)
+
+---
+
 ## Features
 
 ✅ Next.js 15 with App Router  
 ✅ TypeScript & Tailwind CSS  
+✅ Wagmi + Base wallet integration
 ✅ Pre-configured manifest (`/.well-known/farcaster.json`) for Base Build  
 ✅ Embed metadata for rich sharing in feeds  
 ✅ Starter assets (icon, splash, hero images)  
 ✅ Eruda mobile debugging console (optional)  
 ✅ Ready to deploy on Vercel
 
-## Quick Start
+## Manual Setup (Alternative)
+
+If you prefer to clone manually instead of using the CLI:
 
 ### 1. Clone the Repository
 

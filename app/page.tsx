@@ -2,7 +2,6 @@
 
 import { sdk } from '@farcaster/miniapp-sdk';
 import { useEffect } from 'react';
-import { WalletIndicator } from "./components/WalletIndicator";
 import { useMiniApp } from './providers/miniAppProvider';
 
 export default function Home() {
@@ -20,6 +19,9 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-gray-900 mb-3">
             Base Mini App Starter
           </h1>
+          <p className="text-sm text-gray-600 mb-4">
+            Build your Base Mini App in seconds
+          </p>
           {isInMiniApp && context?.user && (
             <p className="text-sm text-gray-500 mt-2">
               Welcome, @{context.user.username}!
@@ -27,10 +29,43 @@ export default function Home() {
           )}
         </div>
 
+        {/* CLI Quick Start */}
+        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-6 mb-6 border border-indigo-100">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <span>⚡</span> Quick Start
+          </h2>
+          <p className="text-sm text-gray-600 mb-3">
+            Bootstrap your own mini app with one command:
+          </p>
+          <div className="bg-gray-900 rounded-lg p-4 mb-3">
+            <code className="text-sm text-green-400 font-mono">
+              npx starterminiapp my-mini-app
+            </code>
+          </div>
+          <div className="flex gap-3 text-xs">
+            <a
+              href="https://www.npmjs.com/package/starterminiapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 hover:text-indigo-700 underline font-medium"
+            >
+              📦 npm package
+            </a>
+            <a
+              href="https://github.com/patnir/starterminiapp-cli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-600 hover:text-indigo-700 underline font-medium"
+            >
+              🔧 CLI source
+            </a>
+          </div>
+        </div>
+
         <div className="space-y-6 mb-8">
           <div className="bg-indigo-50 rounded-lg p-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
-              Quick Setup Checklist
+              Setup Checklist
             </h2>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
@@ -57,7 +92,15 @@ export default function Home() {
               <li className="flex items-start gap-3">
                 <span className="text-indigo-600 font-bold mt-0.5">3.</span>
                 <span>
-                  Deploy and verify domain ownership with Base Build account association tool
+                  Deploy, sign your manifest, register your app using{" "}
+                  <a
+                    href="https://www.base.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-600 hover:text-indigo-700 underline font-medium"
+                  >
+                    Base Build
+                  </a>
                 </span>
               </li>
             </ul>
@@ -126,7 +169,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <WalletIndicator />
     </div>
   );
 }
