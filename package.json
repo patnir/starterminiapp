@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "npx vercel --yes --prod"
   },
   "dependencies": {
     "@farcaster/miniapp-sdk": "^0.2.0",
